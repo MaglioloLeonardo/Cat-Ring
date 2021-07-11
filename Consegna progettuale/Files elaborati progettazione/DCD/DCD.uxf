@@ -1,0 +1,1851 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>3</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>531</x>
+      <y>336</y>
+      <w>111</w>
+      <h>57</h>
+    </coordinates>
+    <panel_attributes>Task
+--
+-time: Integer
+-quantity: String
+-portion: Integer
+--
++setTime(time: Integer)
++setQuantity(quantity: String)
++setPortion(portion: Integer)
++setMix(mix: Mixture)
++setCook(cook: Cook)
++setKitchenWorkshift(kitchenWorkshift: kitchenWorkshift)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>372</x>
+      <y>171</y>
+      <w>273</w>
+      <h>387</h>
+    </coordinates>
+    <panel_attributes>KitchenTasksManagement
+layer=-1
+bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>390</x>
+      <y>297</y>
+      <w>138</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>KitchenTasksManager
+--
+
+--
++addReceiver(er: KitchenEventReceiver)
++removeReceiver(er: KitchenEventReceiver)
+-notifySheetAdded(sheet: SummarySheet)
+-notifySheetRemoved(sheet: SummarySheet)
+-notifyAddedMixture(sheet: SummarySheet, mix: Mixture)
+-notifyRemovedMixture(sheet: SummarySheet, mix: Mixture)
+-notifyTaskAdded(sheet: SummarySheet, task: Task)
+-notifyTaskModified(sheet: SummarySheet, task: Task)
+-notifyTaskRemoved(sheet: SummarySheet, task: Task)
+-notifySheetOrdered(sheet: SummarySheet, order: List&lt;Task&gt;)
+--
++CreateSummarySheet(service: Service)
++DeleteSummarySheet(service: Service)
++WorkOnSummarySheet(sheet: SummarySheet)
++addMixture(mix: Mixture)
++removeMixture(mix: Mixture)
++showKitchenTimeTable()
++addTask(mix: Mixture, cook?: Cook, kitchenWorkshift?: 
+  KitchenWorkshift, time?: Integer, qnty?: String, portion?: Integer)
++modifyTask(task: Task,mix?: Mixture, cook?: Cook, kitchenWorkshift?: 
+  KitchenWorkshift, time?: int, qnty?: String, portion?: int)
++deleteTask(task: Task)
++setSort(order: List&lt;Task&gt;)
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>702</x>
+      <y>222</y>
+      <w>798</w>
+      <h>438</h>
+    </coordinates>
+    <panel_attributes>WorkshiftsManagement
+layer=-1
+fg=gray
+bg=gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>339</x>
+      <y>339</y>
+      <w>57</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+currentChef</panel_attributes>
+    <additional_attributes>10.0;20.0;170.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>393</x>
+      <y>438</y>
+      <w>240</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>SummarySheet
+--
+-Id_chef: int
+--
++addMixture(mix: Mixture)
++removeMixture(mix: Mixture)
++addTask(mix: Mixture, cook?: Cook, kitchenWorkshift?: KitchenWorkshift, time?: Integer, qnty?: String, portion?: Integer)
++modifyTask(task: Task,mix?: Mixture, cook?: Cook, kitchenWorkshift?: KitchenWorkshift, time?: int, qnty?: String, portion?: int)
++deleteTask(task: Task)
++setSort(order: List&lt;Task&gt;)
++isMixturePresent(mix: Mixture): boolean
++isTaskPresent(task: Task): boolean
++setChefID(chef_id :int)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>435</x>
+      <y>414</y>
+      <w>33</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..1
+currentSheet</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>570</x>
+      <y>390</y>
+      <w>18</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+tasks</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>930</x>
+      <y>285</y>
+      <w>132</w>
+      <h>87</h>
+    </coordinates>
+    <panel_attributes>TimeTable
+{1}
+--
+
+--
+-TimeTable()
++getInstance(): TimeTable {static}
++GenerateDatesInBetween(startDate: LocalDate, 
+ endDate: LocalDate ): List&lt;LocalDate&gt; {static}
++CreateKitchenWorkshift(startHour: LocalTime,endHour: LocalTime, 
+ executionDate: LocalDate, expirationDate?: LocalDate,
+ kitchen: Kitchen, org: Organizator): Workshift
++CreateServiceWorkshift(startHour: LocalTime,endHour: LocalTime, 
+ executionDate: LocalDate, expirationDate?: LocalDate,
+ service: Service, org: Organizator): Workshift
++DeleteWorkshift(shift: Workshift)
++CanWorkshiftBeAdded(shift: Workshift): boolean
++CanWorkshiftBeDeleted(shift: Workshift): boolean
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>132</x>
+      <y>180</y>
+      <w>216</w>
+      <h>243</h>
+    </coordinates>
+    <panel_attributes>UserManagement
+fg=gray
+layer=-1
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>711</x>
+      <y>267</y>
+      <w>198</w>
+      <h>177</h>
+    </coordinates>
+    <panel_attributes>WorkshiftsManager
+--
+
+--
++addReceiver(er: WorkshiftsEventReceiver)
++removeReceiver(er: WorkshiftsEventReceiver)
+-notifyKitchenRecurrenceAdded(r: KitchenRecurrence)
+-notifyKitchenWorkshiftRemoved(shift: KitchenWorkshift, r: KitchenRecurrence)
+-notifyServiceWorkshiftAdded(shift: ServiceWorkshift)
+-notifyGroupAdded(group: Group)
+-notifyServiceTaskAdded(task: ServiceTask)
+-notifyServiceTaskRemoved(task: ServiceTask)
+--
++WorkOnKitchen(kitchen: Kitchen)
++CreateRecursiveKitchenWorkshift(startHour: LocalTime, endHour: LocalTime,startDayOfWeek: int,
+ endDayOfWeek: int, startDate: LocalDate, endDate: LocalDate, expirationDate?: LocalDate):Recurrence
++CreateKitchenWorkshift(startHour: LocalTime, endHour: LocalTime, executionDate: LocalDate,
+ expirationDate?: LocalDate)
++DeleteKitchenWorkshift(workshift: KitchenWorkshift, deleteRecurrenceShifts: boolean)
++ModifyKitchenWorkshift(shift: KitchenWorkshift, startHour?: LocalTime, endHour?: LocalTime,
+executionDate?: LocalDate, expirationDate?: LocalDate, isValidExpiration: boolean)
++CumulativeGroupKitchenWorkshift(startHour: LocalTime, endHour: LocalTime,startDayOfWeek: int,
+ endDayOfWeek: int, startDate: LocalDate, endDate: LocalDate, kitchen: Kitchen)
++GroupKitchenWorkshift(shifts: List&lt;KitchenWorkshift&gt;)
++DeleteKitchenWorkshiftGroup(shift: ServiceWorkshift, deleteGroup: bool)
++WorkOnEvent(event: Event)
++GenerateRecursivesServicesWorkshifts(advanceMinutes: int, 
+ delayMinutes: int, expirationDate?: LocalDate)
++DeleteRecursiveServiceWorkshifts()
++WorkOnService(service: Service)
++CreateServiceWorkshift(advanceMinutes: int, delayMinutes: int, expirationDate?: LocalDate)
++DeleteServiceWorkshift()
++AssignServiceTask(staff: Object)
++DeleteServiceTask(task: ServiceTask)
++CumulativeGroupServiceWorkshift(startHour: LocalTime, endHour: LocalTime,startDayOfWeek: int,
+ endDayOfWeek: int, startDate: LocalDate, endDate: LocalDate)
++GroupServicenWorkshift(shifts: List&lt;ServiceWorkshift&gt;)
++DeleteServiceWorkshiftGroup(shift: ServiceWorkshift, deleteGroup: bool)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>804</x>
+      <y>516</y>
+      <w>105</w>
+      <h>75</h>
+    </coordinates>
+    <panel_attributes>/Workshift/
+{abstract}
+--
+#ID: int
+#startHour: LocalTime
+#endHour: LocalTime
+#executionDate: LocalDate
+#expirationDate: LocalDate
+--
++setStartHour()
++setEndHour()
++setExecutionDate()
++setExpirationDate()
++setID(ID: int)
++setGroup(group: Group)&lt;&lt;abstract&gt;&gt;
++sizeOfAvailabilities(): int &lt;&lt;abstract&gt;&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>519</x>
+      <y>249</y>
+      <w>465</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+timeTable</panel_attributes>
+    <additional_attributes>1520.0;120.0;1520.0;20.0;10.0;20.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>336</x>
+      <y>357</y>
+      <w>63</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+summarySheets</panel_attributes>
+    <additional_attributes>190.0;300.0;10.0;300.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>228</x>
+      <y>201</y>
+      <w>93</w>
+      <h>39</h>
+    </coordinates>
+    <panel_attributes>Cook
+--
+-ID: int
+--
++isAvaible(workshift: kitchenWorkshift): boolean
++addAvailability(workshift: kitchenWorkshift)
++setID(ID: int)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>318</x>
+      <y>219</y>
+      <w>276</w>
+      <h>123</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..1
+cook</panel_attributes>
+    <additional_attributes>10.0;10.0;160.0;10.0;160.0;210.0;900.0;210.0;900.0;390.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>639</x>
+      <y>357</y>
+      <w>81</w>
+      <h>282</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..1
+workshift</panel_attributes>
+    <additional_attributes>250.0;910.0;40.0;910.0;40.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>159</x>
+      <y>453</y>
+      <w>198</w>
+      <h>141</h>
+    </coordinates>
+    <panel_attributes>RecipeManagement
+fg=gray
+layer=-1
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>198</x>
+      <y>468</y>
+      <w>93</w>
+      <h>39</h>
+    </coordinates>
+    <panel_attributes>Mixture
+{abstract}
+--
+#ID: int
+#Name: String
+--
++setID(ID: int)
++toString(): String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>288</x>
+      <y>390</y>
+      <w>354</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+mixture</panel_attributes>
+    <additional_attributes>10.0;390.0;1160.0;390.0;1160.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>222</x>
+      <y>327</y>
+      <w>120</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>Chef
+--
+
+--
++CreateSummarySheet(service: Service)
++DeleteSummarySheet(service: Service)
++isSummarySheetPresent(sheet: SummarySheet): boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>438</x>
+      <y>654</y>
+      <w>183</w>
+      <h>138</h>
+    </coordinates>
+    <panel_attributes>EventManagement
+layer=-1
+fg=gray
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>441</x>
+      <y>669</y>
+      <w>129</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Service
+--
+Agguinta variabile opzionale serviceRecurrence
+-day: LocalDate
+-start: LocalTime
+-end: LocalTime
+--
++duration(): integer
++setSummarySheet(sheet: SummarySheet)
++assignServiceTask(staff: Object): ServiceTask
++deleteServiceTask(task: ServiceTask)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>534</x>
+      <y>495</y>
+      <w>36</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..1
+summarySheet</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;580.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>528</x>
+      <y>738</y>
+      <w>90</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Event
+--
+-informations: String
+--
++setRecurrence()
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>549</x>
+      <y>714</y>
+      <w>18</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+event</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>390</x>
+      <y>195</y>
+      <w>126</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>KitchenEventReceiver
+{interface}
+--
+
+--
++updateSheetAdded(sheet: SummarySheet)
++updateSheetRemoved(sheet: SummarySheet)
++updateMixtureAdded(sheet: SummarySheet, mix: Mixture)
++updateMixtureRemoved(sheet: SummarySheet, mix: Mixture)
++updateTaskAdded(sheet: SummarySheet, task: Task)
++updateTaskModified(sheet: SummarySheet, task: Task)
++updateTaskRemoved(sheet: SummarySheet, task: Task)
++updateSheetOrdered(sheet: SummarySheet, order: List&lt;Task&gt;)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>405</x>
+      <y>252</y>
+      <w>36</w>
+      <h>51</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+eventReceivers</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>288</x>
+      <y>483</y>
+      <w>111</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+mixtures</panel_attributes>
+    <additional_attributes>10.0;20.0;350.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>714</x>
+      <y>609</y>
+      <w>105</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>KitchenWorkshift
+--
+
+
+
+--
++sizeOfAvailabilities(): int
++setGroup(group: Group)
++setRecurrence(recurrence: KitchenRecurrence)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>882</x>
+      <y>606</y>
+      <w>105</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>ServiceWorkshift
+--
+
+
+
+
+--
++sizeOfAvailabilities(): int
++setGroup(group: Group)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>765</x>
+      <y>588</y>
+      <w>81</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>250.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>873</x>
+      <y>588</y>
+      <w>72</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;220.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>300</x>
+      <y>162</y>
+      <w>510</w>
+      <h>399</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m1=0..n
+availabilities</panel_attributes>
+    <additional_attributes>1680.0;1300.0;1240.0;1300.0;1240.0;10.0;10.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1125</x>
+      <y>345</y>
+      <w>129</w>
+      <h>87</h>
+    </coordinates>
+    <panel_attributes>/Recurrence/
+{abstract}
+--
+#startHour: LocalTime
+#endHour: LocalTime
+#startDayOfWeek: int
+#endDayOfWeek: int
+#startDate: LocalDate
+#endDate: LocalDate
+#expirationDate: LocalDate
+--
++CreateRecurringElements() &lt;&lt;abstract&gt;&gt;
++AddElement(element: Object) &lt;&lt;abstract&gt;&gt;
++RemoveElement(element: Object) &lt;&lt;abstract&gt;&gt;
++DeleteAllElements() &lt;&lt;abstract&gt;&gt;
+#calculateAdvanceTime(startHour: LocalTime, advanceMinutes: int)
+ : Localdate {static}
+#calculateDelayTime(endHour: LocalTime, delayMinutes: int)
+ : Localdate {static}
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1053</x>
+      <y>450</y>
+      <w>117</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>KitchenRecurrence
+--
+--
++CreateRecurringElements() 
++AddElement(element: Object)
++RemoveElement(element: Object)
++DeleteAllElements()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1188</x>
+      <y>450</y>
+      <w>135</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>ServiceRecurrence
+--
+--
++CreateRecurringElements()
++AddElement(element: Object): boolean
++RemoveElement(element: Object): boolean
++DeleteAllElements()
++GenerateWorkshifts(advanceMinutes: int, 
+ delayMinutes: int, expirationDate?: LocalDate): List&lt;ServiceWorkshift&gt;
++DeleteAllWorkshiftsFromServices()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1113</x>
+      <y>429</y>
+      <w>39</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1200</x>
+      <y>429</y>
+      <w>42</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>906</x>
+      <y>369</y>
+      <w>147</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+workshifts</panel_attributes>
+    <additional_attributes>10.0;510.0;470.0;510.0;470.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1083</x>
+      <y>255</y>
+      <w>186</w>
+      <h>69</h>
+    </coordinates>
+    <panel_attributes>Recurrences
+{1}
+--
+
+--
+-Recurrences()
++getInstance(): Recurrences {static}
++getRecurrenceByEvent(event: Event): Recurrence
++CreateKitchenRecurrence(startHour: LocalTime, endHour: LocalTime,startDayOfWeek: int,
+ endDayOfWeek: int, startDate: LocalDate, endDate: LocalDate, kitchen: Kitchen, org :organizator)
+ : Recurrence
++CreateServiceRecurrence(startHour: LocalTime, endHour: LocalTime,startDayOfWeek: int,
+ endDayOfWeek: int, startDate: LocalDate, endDate: LocalDate, event: Event, org :organizator)
+ : Recurrence
++DeleteRecurrence(recurrence: Recurrence)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1173</x>
+      <y>321</y>
+      <w>30</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+recurrences</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>441</x>
+      <y>741</y>
+      <w>84</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>ServiceTask
+--
+--
++setStaff(staff: Object)
++setShift(shift: ServiceWorkshift)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>492</x>
+      <y>714</y>
+      <w>33</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+serviceTasks</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>495</x>
+      <y>645</y>
+      <w>450</w>
+      <h>159</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+serviceWorkshift</panel_attributes>
+    <additional_attributes>1470.0;10.0;1470.0;510.0;10.0;510.0;10.0;410.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>225</x>
+      <y>375</y>
+      <w>93</w>
+      <h>39</h>
+    </coordinates>
+    <panel_attributes>ServiceStaff
+--
+
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>114</x>
+      <y>381</y>
+      <w>360</w>
+      <h>426</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m2=0..1
+ServiceStaff</panel_attributes>
+    <additional_attributes>1180.0;1290.0;1180.0;1400.0;10.0;1400.0;10.0;10.0;370.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>615</x>
+      <y>309</y>
+      <w>108</w>
+      <h>441</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..1
+currentEvent</panel_attributes>
+    <additional_attributes>10.0;1440.0;260.0;1440.0;260.0;10.0;320.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>567</x>
+      <y>297</y>
+      <w>150</w>
+      <h>390</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..1
+currentService</panel_attributes>
+    <additional_attributes>10.0;1270.0;380.0;1270.0;380.0;10.0;480.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1236</x>
+      <y>240</y>
+      <w>48</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..1
+currentInstance {static}</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;20.0;140.0;20.0;140.0;160.0;110.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>999</x>
+      <y>270</y>
+      <w>69</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..1
+currentInstance {static}</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;20.0;210.0;20.0;210.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>774</x>
+      <y>489</y>
+      <w>339</w>
+      <h>183</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1..n
+workshifts</panel_attributes>
+    <additional_attributes>10.0;540.0;10.0;590.0;1110.0;590.0;1110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>564</x>
+      <y>492</y>
+      <w>690</w>
+      <h>297</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+event</panel_attributes>
+    <additional_attributes>10.0;920.0;10.0;970.0;2280.0;970.0;2280.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>567</x>
+      <y>492</y>
+      <w>639</w>
+      <h>222</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+services</panel_attributes>
+    <additional_attributes>10.0;710.0;2110.0;710.0;2110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>465</x>
+      <y>714</y>
+      <w>21</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+service</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>720</x>
+      <y>168</y>
+      <w>258</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>KitchenManagement
+layer=-1
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>849</x>
+      <y>180</y>
+      <w>69</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Kitchen
+--
+
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>729</x>
+      <y>180</y>
+      <w>105</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>KitchenManager
+--
+
+--
+
+--
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>876</x>
+      <y>207</y>
+      <w>36</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..1
+currentKitchen</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>906</x>
+      <y>282</y>
+      <w>30</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+timeTable</panel_attributes>
+    <additional_attributes>80.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>228</x>
+      <y>264</y>
+      <w>93</w>
+      <h>39</h>
+    </coordinates>
+    <panel_attributes>Organizator
+--
+
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>318</x>
+      <y>267</y>
+      <w>399</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+currentOrganizator</panel_attributes>
+    <additional_attributes>10.0;20.0;1310.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>756</x>
+      <y>489</y>
+      <w>375</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..1
+recurrence</panel_attributes>
+    <additional_attributes>1210.0;10.0;1210.0;610.0;10.0;610.0;10.0;540.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>915</x>
+      <y>192</y>
+      <w>156</w>
+      <h>264</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+kitchen</panel_attributes>
+    <additional_attributes>10.0;20.0;500.0;20.0;500.0;860.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>912</x>
+      <y>396</y>
+      <w>132</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>WorkshiftsEventReceiver
+{interface}
+--
+
+--
++updateKitchenRecurrenceAdded(r: KitchenRecurrence)
++updateKitchenWorkshiftRemoved(shift: KitchenWorkshift,
+  r: KitchenRecurrence)
++updateServiceWorkshiftAdded(shift: ServiceWorkshift)
++updateGroupAdded(group: Group)
++updateServiceTaskAdded(task: ServiceTask)
++updateServiceTaskRemoved(task: ServiceTask)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>906</x>
+      <y>372</y>
+      <w>57</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+eventReceivers</panel_attributes>
+    <additional_attributes>80.0;80.0;80.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1329</x>
+      <y>267</y>
+      <w>111</w>
+      <h>51</h>
+    </coordinates>
+    <panel_attributes>Groups
+{1}
+--
+
+--
+-Groups()
++getInstance(): Recurrences {static}
++CreateKitchenGroup(kitchen: Object): Group 
++CreateServiceGroup(event: Object): Group
++deleteGroup(group: Group): boolean
++getGroupsByShift(shift: Workshift): List&lt;Group&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1413</x>
+      <y>243</y>
+      <w>48</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..1
+currentInstance {static}</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;20.0;140.0;20.0;140.0;140.0;90.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1314</x>
+      <y>342</y>
+      <w>150</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>/Group/
+{abstract}
+--
+
+--
++AddElement(element: Workshift)&lt;&lt;abstract&gt;&gt;
++RemoveElement(element: Workshift)
++CumulativeGroupServiceWorkshift(startHour: LocalTime, endHour: LocalTime,
+ startDayOfWeek: int,endDayOfWeek: int, startDate: LocalDate,
+ endDate: LocalDate, event: Event, org: Organizator)&lt;&lt;abstract&gt;&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1380</x>
+      <y>315</y>
+      <w>21</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+groups</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1272</x>
+      <y>405</y>
+      <w>102</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>KitchenGroup
+--
+
+--
++AddElement(element: KitchenWorkshift)
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1392</x>
+      <y>405</y>
+      <w>102</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>ServiceGroup
+--
+
+--
++AddElement(element: ServiceWorkshift)
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1326</x>
+      <y>384</y>
+      <w>36</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>100.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1407</x>
+      <y>384</y>
+      <w>42</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>906</x>
+      <y>384</y>
+      <w>489</w>
+      <h>186</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m2=0..1
+group</panel_attributes>
+    <additional_attributes>10.0;600.0;1590.0;600.0;1590.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>915</x>
+      <y>183</y>
+      <w>390</w>
+      <h>228</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+kitchen</panel_attributes>
+    <additional_attributes>10.0;20.0;1280.0;20.0;1280.0;740.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>615</x>
+      <y>429</y>
+      <w>834</w>
+      <h>342</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+event</panel_attributes>
+    <additional_attributes>10.0;1110.0;2760.0;1110.0;2760.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>318</x>
+      <y>285</y>
+      <w>492</w>
+      <h>294</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m2=1
+Organizator</panel_attributes>
+    <additional_attributes>1620.0;960.0;140.0;960.0;140.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>153</x>
+      <y>402</y>
+      <w>741</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+ availabilities</panel_attributes>
+    <additional_attributes>2430.0;680.0;2430.0;660.0;10.0;660.0;10.0;10.0;240.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>141</x>
+      <y>198</y>
+      <w>78</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>UserManager
+--
+
+--
+*event sender methods*
+
+
+--
+*operations methods*
++getCurrentUser(): User
+fg=gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>150</x>
+      <y>300</y>
+      <w>45</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>User
+
+--
+
+--
++isChef( ): boolean
+
+fg=gray
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>171</x>
+      <y>255</y>
+      <w>30</w>
+      <h>51</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+currentUser
+m1=0..1
+fg=gray</panel_attributes>
+    <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>168</x>
+      <y>522</y>
+      <w>102</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Recipe
+fg=gray
+--
+
+
+--
++getRecipeFromID(id: int): Recipe {static}
++loadAllRecipes(): ObservableList&lt;Recipe&gt; {static}
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>153</x>
+      <y>537</y>
+      <w>27</w>
+      <h>51</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m2=0..n
+recipes
+fg=gray</panel_attributes>
+    <additional_attributes>60.0;150.0;30.0;150.0;30.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>171</x>
+      <y>561</y>
+      <w>57</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>RecipeManager
+--
+
+--
++getRecipeBook(): 
+	ArrayList&lt;Recipe&gt;
+
+fg=gray
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>207</x>
+      <y>504</y>
+      <w>33</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>273</x>
+      <y>522</y>
+      <w>81</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Preparation
+fg=gray
+--
+
+
+--
++getRecipeFromID(id: int): Recipe {static}
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>261</x>
+      <y>504</y>
+      <w>33</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>141</x>
+      <y>639</y>
+      <w>105</w>
+      <h>87</h>
+    </coordinates>
+    <panel_attributes>MenuManager
+--
+-menuFeatures: String[]
+--
+*event sender methods*
++addReceiver(er: MenuEventReceiver)
++removeReceiver(er: MenuEventReceiver)
+-notifySectionAdded(sec: Section)
+-notifyMenuItemAdded(mi: MenuItem)
+-notifyMenuCreated(m: Menu)
+-notifyMenuDeleted(m: Menu)
+-notifySectionsRearranged(m: Menu)
+
+--
+*operations methods*
++defineSection(name: String)
++inserItem(r: Recipe, sec?: Section, desc?: String)
++createMenu(title: String): Menu
++getRecipeBook( ): ArrayList&lt;Recipe&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>279</x>
+      <y>636</y>
+      <w>99</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>Menu
+--
+-title: String
+-published: boolean
+-inUse: boolean
+-features: String[]
+-featureValues: boolean[]
+--
++create(owner: User, title: String, features: String[])
++addSection(name: String)
++addItem(r: Recipe, sec?: Section,
+                                        desc?: String)
++isOwner(user: User): boolean
++isInUse(): boolean
++hasSection(sec: Section): boolean
++sectionsSize(): int
++moveSection(sec: Section, pos: int)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>243</x>
+      <y>681</y>
+      <w>42</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+currentMenu
+m1=0..1</panel_attributes>
+    <additional_attributes>120.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>327</x>
+      <y>759</y>
+      <w>78</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>MenuItem
+--
+description: String
+--
++create(rec: Recipe, desc?: String)
++create(mi: MenuItem)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>336</x>
+      <y>711</y>
+      <w>27</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+freeItems</panel_attributes>
+    <additional_attributes>10.0;160.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>261</x>
+      <y>735</y>
+      <w>63</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Section
+--
+name: String
+--
++create(name: String)
++create(sec: Section)
++addItem(mi: MenuItem)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>270</x>
+      <y>696</y>
+      <w>24</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+sections</panel_attributes>
+    <additional_attributes>10.0;130.0;10.0;10.0;30.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>270</x>
+      <y>768</y>
+      <w>63</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+sectionItems</panel_attributes>
+    <additional_attributes>190.0;50.0;10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>138</x>
+      <y>744</y>
+      <w>117</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>MenuEventReceiver
+{interface}
+--
+
+--
+/+updateSectionAdded(m: Menu, sec: Section)/
+/+updateMenuItemAdded(m: Menu, mi: MenuItem)/
+/+updateMenuCreated(m: Menu)/
+/+updateMenuDeleted(m: Menu)/
+/+updateSectionsRearranged(m: Menu)/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>183</x>
+      <y>723</y>
+      <w>36</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+eventReceivers
+m1=0..n</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>150</x>
+      <y>330</y>
+      <w>141</w>
+      <h>312</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+owner
+m1=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;920.0;450.0;920.0;450.0;1020.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>264</x>
+      <y>549</y>
+      <w>129</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+itemRecipe</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0;410.0;110.0;410.0;700.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>135</x>
+      <y>627</y>
+      <w>273</w>
+      <h>165</h>
+    </coordinates>
+    <panel_attributes>MenuManagement
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>192</x>
+      <y>279</y>
+      <w>45</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..1
+Organizator</panel_attributes>
+    <additional_attributes>120.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>192</x>
+      <y>324</y>
+      <w>36</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..1
+Chef</panel_attributes>
+    <additional_attributes>100.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>186</x>
+      <y>330</y>
+      <w>48</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..1
+
+
+
+
+ServiceStaff</panel_attributes>
+    <additional_attributes>130.0;160.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>189</x>
+      <y>237</y>
+      <w>60</w>
+      <h>69</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..1
+Chef</panel_attributes>
+    <additional_attributes>170.0;10.0;10.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1269</x>
+      <y>672</y>
+      <w>162</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>General module
+fg=gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1272</x>
+      <y>681</y>
+      <w>66</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>UseCaseLogicException
+--
+fg=gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1374</x>
+      <y>681</y>
+      <w>39</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>Exception
+--
+
+fg=magenta
+fg=gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1335</x>
+      <y>690</y>
+      <w>45</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+fg=gray</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>102</x>
+      <y>354</y>
+      <w>447</w>
+      <h>465</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..1
+chef</panel_attributes>
+    <additional_attributes>400.0;10.0;10.0;10.0;10.0;1530.0;1470.0;1530.0;1470.0;1380.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>615</x>
+      <y>492</y>
+      <w>624</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m2=0..1
+recurrence</panel_attributes>
+    <additional_attributes>10.0;880.0;2040.0;880.0;2040.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>615</x>
+      <y>492</y>
+      <w>609</w>
+      <h>264</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+service</panel_attributes>
+    <additional_attributes>10.0;850.0;2010.0;850.0;2010.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>219</x>
+      <y>150</y>
+      <w>912</w>
+      <h>237</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+Organizator</panel_attributes>
+    <additional_attributes>30.0;430.0;10.0;430.0;10.0;20.0;2860.0;20.0;2860.0;770.0;3020.0;770.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>567</x>
+      <y>645</y>
+      <w>351</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m2=
+
+
+
+
+service</panel_attributes>
+    <additional_attributes>1110.0;10.0;1110.0;140.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>567</x>
+      <y>492</y>
+      <w>654</w>
+      <h>228</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m2=0..1
+group</panel_attributes>
+    <additional_attributes>10.0;740.0;2140.0;740.0;2140.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>567</x>
+      <y>645</y>
+      <w>420</w>
+      <h>57</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m2=0..1
+workshift</panel_attributes>
+    <additional_attributes>10.0;170.0;1360.0;170.0;1360.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>108</x>
+      <y>162</y>
+      <w>375</w>
+      <h>651</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m2=0..1
+cook</panel_attributes>
+    <additional_attributes>1230.0;2020.0;1230.0;2150.0;10.0;2150.0;10.0;10.0;490.0;10.0;490.0;130.0</additional_attributes>
+  </element>
+</diagram>
