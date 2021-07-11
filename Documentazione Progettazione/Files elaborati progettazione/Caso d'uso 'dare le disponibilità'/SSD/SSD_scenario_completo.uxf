@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLActor</id>
+    <coordinates>
+      <x>504</x>
+      <y>99</y>
+      <w>180</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>Personale di servizio / Cuoco</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>972</x>
+      <y>189</y>
+      <w>27</w>
+      <h>981</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;1070.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>585</x>
+      <y>189</y>
+      <w>27</w>
+      <h>981</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;1070.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLDeployment</id>
+    <coordinates>
+      <x>936</x>
+      <y>144</y>
+      <w>99</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>System</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>612</x>
+      <y>0</y>
+      <w>396</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>valign=center
+halign=center
+Diagrammi di sequenza di sistema
+per l'UC Inserire le disponibilità
+lw=0
+fontsize=24
+bg=#F9FF47</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>612</x>
+      <y>54</y>
+      <w>396</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>valign=center
+halign=center
+Scenario principale, estensioni ed eccezioni
+lw=0
+fontsize=18</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>585</x>
+      <y>225</y>
+      <w>414</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+1.LavoraSuEvento(evento)</panel_attributes>
+    <additional_attributes>440.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>585</x>
+      <y>252</y>
+      <w>414</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+Registra selezione</panel_attributes>
+    <additional_attributes>10.0;20.0;440.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>585</x>
+      <y>324</y>
+      <w>414</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+2.AggiungiDisponibilitàServizio(servizio, disponibilitàRicorrenza)</panel_attributes>
+    <additional_attributes>440.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>585</x>
+      <y>351</y>
+      <w>414</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+Registra disponibilità</panel_attributes>
+    <additional_attributes>10.0;20.0;440.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>522</x>
+      <y>288</y>
+      <w>522</w>
+      <h>324</h>
+    </coordinates>
+    <panel_attributes>LOOP [1..n]
+layer=-1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>504</x>
+      <y>216</y>
+      <w>549</w>
+      <h>405</h>
+    </coordinates>
+    <panel_attributes>LOOP [1..n]
+layer=-1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>585</x>
+      <y>666</y>
+      <w>414</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+(1-2)a.1.LavoraSuCucina(cucina)</panel_attributes>
+    <additional_attributes>440.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>585</x>
+      <y>693</y>
+      <w>414</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+Registra selezione</panel_attributes>
+    <additional_attributes>10.0;20.0;440.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>576</x>
+      <y>828</y>
+      <w>432</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+(1-2)a.2.AggiungiDisponibilitàTurnoDiCucina(turno, disponibilitàRicorrenza)</panel_attributes>
+    <additional_attributes>450.0;20.0;20.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>585</x>
+      <y>855</y>
+      <w>414</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+Registra disponibilità</panel_attributes>
+    <additional_attributes>10.0;20.0;440.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>513</x>
+      <y>801</y>
+      <w>522</w>
+      <h>306</h>
+    </coordinates>
+    <panel_attributes>LOOP [1..n]
+layer=-3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>504</x>
+      <y>648</y>
+      <w>549</w>
+      <h>468</h>
+    </coordinates>
+    <panel_attributes>LOOP [1..n]
+layer=-3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>459</x>
+      <y>207</y>
+      <w>612</w>
+      <h>927</h>
+    </coordinates>
+    <panel_attributes>ALT
+--
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-.
+layer=-3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>549</x>
+      <y>693</y>
+      <w>468</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>ALT
+--
+
+-.
+
+
+layer=-1
+bg=orange
+fg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>585</x>
+      <y>738</y>
+      <w>414</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+(1-2)a.1a.1 errore: attore identificato non autorizzato</panel_attributes>
+    <additional_attributes>10.0;20.0;440.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>972</x>
+      <y>747</y>
+      <w>18</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>type=termination
+bg=red
+fg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>540</x>
+      <y>315</y>
+      <w>495</w>
+      <h>288</h>
+    </coordinates>
+    <panel_attributes>ALT
+--
+
+
+
+
+
+
+
+
+-.
+layer=-1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>585</x>
+      <y>468</y>
+      <w>414</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+2a.1.RimuoviDisponibilitàServizio(servizio, disponibilitàRicorrenza)</panel_attributes>
+    <additional_attributes>440.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>585</x>
+      <y>495</y>
+      <w>414</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+Registra eliminazione</panel_attributes>
+    <additional_attributes>10.0;20.0;440.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>549</x>
+      <y>495</y>
+      <w>468</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>ALT
+--
+
+-.
+
+
+layer=-1
+bg=orange
+fg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>585</x>
+      <y>540</y>
+      <w>414</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+2a.1a.1 errore: Superata data massima di rimozione disponibilità</panel_attributes>
+    <additional_attributes>10.0;20.0;440.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>972</x>
+      <y>549</y>
+      <w>18</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>type=termination</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>531</x>
+      <y>828</y>
+      <w>495</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>ALT
+--
+
+
+
+
+
+
+
+-.
+layer=-1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>567</x>
+      <y>963</y>
+      <w>450</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+(1-2)a.2a.1.RimuoviDisponibilitàTurnoDiCucina(turno, disponibilitàRicorrenza)</panel_attributes>
+    <additional_attributes>460.0;20.0;30.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>585</x>
+      <y>990</y>
+      <w>414</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+Registra eliminazione</panel_attributes>
+    <additional_attributes>10.0;20.0;440.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>549</x>
+      <y>990</y>
+      <w>459</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>ALT
+--
+
+-.
+
+
+layer=-1
+bg=orange
+fg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>585</x>
+      <y>1035</y>
+      <w>414</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+(1-2)a.2a.1a.1 errore: Superata data massima di rimozione disponibilità</panel_attributes>
+    <additional_attributes>10.0;20.0;440.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>558</x>
+      <y>351</y>
+      <w>459</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>ALT
+--
+
+-.
+
+
+layer=-1
+bg=orange
+fg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>585</x>
+      <y>396</y>
+      <w>414</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+2b.1 errore: Superata data massima di aggiunta disponibilità</panel_attributes>
+    <additional_attributes>10.0;20.0;440.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>972</x>
+      <y>405</y>
+      <w>18</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>type=termination</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>972</x>
+      <y>1044</y>
+      <w>18</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>type=termination</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>558</x>
+      <y>855</y>
+      <w>450</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>ALT
+--
+
+-.
+
+
+layer=-1
+bg=orange
+fg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>585</x>
+      <y>900</y>
+      <w>414</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+(1-2)a.2b.1 errore: Superata data massima di aggiunta disponibilità</panel_attributes>
+    <additional_attributes>10.0;20.0;440.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>972</x>
+      <y>909</y>
+      <w>18</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>type=termination</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

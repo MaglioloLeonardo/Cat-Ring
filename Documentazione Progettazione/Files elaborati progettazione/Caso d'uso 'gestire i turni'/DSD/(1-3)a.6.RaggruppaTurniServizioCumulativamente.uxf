@@ -1,0 +1,795 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>6</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>192</x>
+      <y>0</y>
+      <w>900</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>halign=center
+*(1-3)a.6 - CumulativeGroupServiceWorkshift*
+lw=0
+fontsize=70
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>0</x>
+      <y>126</y>
+      <w>54</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>UI</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>198</x>
+      <y>138</y>
+      <w>138</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>WorkshiftsMgr: WorkshiftsManager</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>18</x>
+      <y>162</y>
+      <w>18</w>
+      <h>1122</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;1850.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>264</x>
+      <y>156</y>
+      <w>18</w>
+      <h>1134</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;1870.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>18</x>
+      <y>180</y>
+      <w>264</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;&gt;
+CumulativeGroupServiceWorkshift(startHour,endHour,
+startDayOfWeek, endDayOfWeek, startDate, endDate)</panel_attributes>
+    <additional_attributes>10.0;20.0;420.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>264</x>
+      <y>192</y>
+      <w>12</w>
+      <h>1038</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>78</x>
+      <y>210</y>
+      <w>1590</w>
+      <h>1026</h>
+    </coordinates>
+    <panel_attributes>ALT [currentEvent != null and endHour &gt; startHour and endDayOfWeek &gt;= startDayOfWeek and endDate &gt;= startDate]
+fg=#761C8C
+lw=2
+--
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-.
+layer=-7</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>402</x>
+      <y>138</y>
+      <w>138</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>Groups.currentInstance: Groups</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>468</x>
+      <y>156</y>
+      <w>18</w>
+      <h>1134</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;1870.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>264</x>
+      <y>240</y>
+      <w>222</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;&gt;
+Group.getInstance().CreateServiceGroup(currentEvent)</panel_attributes>
+    <additional_attributes>10.0;20.0;350.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>684</x>
+      <y>318</y>
+      <w>18</w>
+      <h>972</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;1600.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>618</x>
+      <y>300</y>
+      <w>138</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>ServiceGroup: ServiceGroup</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>468</x>
+      <y>300</y>
+      <w>162</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;&gt;&gt;
+Create(currentEvent)</panel_attributes>
+    <additional_attributes>10.0;20.0;250.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>684</x>
+      <y>360</y>
+      <w>162</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;&gt;&gt;
+Create()</panel_attributes>
+    <additional_attributes>10.0;20.0;250.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>900</x>
+      <y>378</y>
+      <w>18</w>
+      <h>912</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;1500.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>834</x>
+      <y>360</y>
+      <w>156</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>ServiceGroup.workshifts
+:ArrayList&lt;ServiceWorkshift&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>684</x>
+      <y>402</y>
+      <w>234</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+workshifts
+</panel_attributes>
+    <additional_attributes>370.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>684</x>
+      <y>444</y>
+      <w>120</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;&gt;
+this.event = event</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0;70.0;60.0;30.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>474</x>
+      <y>510</y>
+      <w>228</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+ServiceGroup
+</panel_attributes>
+    <additional_attributes>360.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>270</x>
+      <y>606</y>
+      <w>216</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+ServiceGroup
+</panel_attributes>
+    <additional_attributes>340.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>960</x>
+      <y>138</y>
+      <w>138</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>groups: List&lt;Group&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1026</x>
+      <y>156</y>
+      <w>18</w>
+      <h>1140</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;1880.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>468</x>
+      <y>558</y>
+      <w>576</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;&gt;
+add(ServiceGroup)</panel_attributes>
+    <additional_attributes>10.0;20.0;940.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>264</x>
+      <y>666</y>
+      <w>438</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;&gt;
+CumulativeGroupServiceWorkshift(startHour,endHour,startDayOfWeek, endDayOfWeek,
+startDate, endDate, this.currentEvent, this.currentOrganizator)</panel_attributes>
+    <additional_attributes>10.0;20.0;710.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1152</x>
+      <y>138</y>
+      <w>150</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>TimeTable.currentInstance: TimeTable</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1218</x>
+      <y>156</y>
+      <w>18</w>
+      <h>1134</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;1870.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>684</x>
+      <y>696</y>
+      <w>552</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;&gt;
+TimeTable().currentInstance().getWorkshifts()</panel_attributes>
+    <additional_attributes>10.0;20.0;900.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>684</x>
+      <y>720</y>
+      <w>552</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+workshifts
+</panel_attributes>
+    <additional_attributes>900.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>600</x>
+      <y>756</y>
+      <w>1002</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>LOOP  [for all workshift in workshifts where (workshift instanceof ServiceWorkshift and (startDayOfWeek&lt;=workshift.getExecutionDate().getDayOfWeek().getValue() and workshift.getExecutionDate().getDayOfWeek().getValue()&lt;=endDayOfWeek))]
+fg=#761C8C
+lw=2
+--
+
+
+
+
+layer=-4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>684</x>
+      <y>786</y>
+      <w>174</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;&gt;
+shift = (ServiceWorkshift)workshift</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0;60.0;60.0;30.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>642</x>
+      <y>834</y>
+      <w>936</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>OPT  [shift.getService() != null and shift.getService().getEvent() == event and shift.getOrganizator() == org and shift.getGroup() == null]
+fg=#761C8C
+lw=2
+--
+
+
+
+
+layer=-4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>684</x>
+      <y>858</y>
+      <w>234</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;&gt;
+add(shift)</panel_attributes>
+    <additional_attributes>10.0;20.0;370.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1374</x>
+      <y>156</y>
+      <w>18</w>
+      <h>1140</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;1880.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1326</x>
+      <y>138</y>
+      <w>102</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>shift: ServiceWorkshift</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>684</x>
+      <y>894</y>
+      <w>708</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;&gt;
+setGroup(this)</panel_attributes>
+    <additional_attributes>10.0;20.0;1160.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>1236</x>
+      <y>930</y>
+      <w>312</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>OPT  [group instanceof ServiceGroup]
+fg=#761C8C
+lw=2
+--
+
+
+
+
+layer=-4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1374</x>
+      <y>948</y>
+      <w>114</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;&gt;
+this.group = group</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0;60.0;60.0;30.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1572</x>
+      <y>138</y>
+      <w>120</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>er:WorkshiftsEventReceiver</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1620</x>
+      <y>156</y>
+      <w>18</w>
+      <h>1134</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;1870.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>264</x>
+      <y>1080</y>
+      <w>186</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;&gt;
+notifyGroupAdded(ServiceGroup)</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0;80.0;40.0;30.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>270</x>
+      <y>1086</y>
+      <w>12</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>204</x>
+      <y>1110</y>
+      <w>1446</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>LOOP for all er in eventReceivers
+fg=blue
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>264</x>
+      <y>1128</y>
+      <w>1374</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;&gt;
+updateGroupAdded(group)</panel_attributes>
+    <additional_attributes>10.0;20.0;2270.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>468</x>
+      <y>252</y>
+      <w>12</w>
+      <h>366</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>684</x>
+      <y>330</y>
+      <w>12</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>690</x>
+      <y>450</y>
+      <w>12</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>900</x>
+      <y>384</y>
+      <w>12</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1026</x>
+      <y>570</y>
+      <w>12</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>684</x>
+      <y>684</y>
+      <w>12</w>
+      <h>378</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>690</x>
+      <y>792</y>
+      <w>12</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>900</x>
+      <y>870</y>
+      <w>12</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1380</x>
+      <y>954</y>
+      <w>12</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1374</x>
+      <y>906</y>
+      <w>12</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1218</x>
+      <y>708</y>
+      <w>12</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1620</x>
+      <y>1140</y>
+      <w>12</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>18</x>
+      <y>1206</y>
+      <w>264</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+throw UseCaseLogicException
+
+</panel_attributes>
+    <additional_attributes>10.0;20.0;420.0;20.0</additional_attributes>
+  </element>
+</diagram>

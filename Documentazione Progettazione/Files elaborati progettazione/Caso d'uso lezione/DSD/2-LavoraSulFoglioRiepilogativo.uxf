@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>15</zoom_level>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>240</x>
+      <y>285</y>
+      <w>135</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>UI</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>285</x>
+      <y>375</y>
+      <w>45</w>
+      <h>480</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;300.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>285</x>
+      <y>450</y>
+      <w>465</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;&gt;
+WorkOnSummarySheet(sheet)</panel_attributes>
+    <additional_attributes>10.0;20.0;290.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>555</x>
+      <y>315</y>
+      <w>345</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>KitchenMgr: KitchenTasksManager</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>720</x>
+      <y>360</y>
+      <w>45</w>
+      <h>495</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;310.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>720</x>
+      <y>480</y>
+      <w>30</w>
+      <h>315</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>540</x>
+      <y>480</y>
+      <w>615</w>
+      <h>345</h>
+    </coordinates>
+    <panel_attributes>ALT [currentChef.isSummarySheetPresent(sheet)]
+fg=#761C8C
+lw=2
+--
+
+
+
+
+
+
+
+
+
+-.
+layer=-2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>285</x>
+      <y>765</y>
+      <w>465</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+throw UseCaseLogicException
+
+</panel_attributes>
+    <additional_attributes>10.0;20.0;290.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>450</x>
+      <y>210</y>
+      <w>555</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>halign=center
+*2 - WorkOnSummarySheet*
+lw=0
+fontsize=20
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>735</x>
+      <y>555</y>
+      <w>420</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;&gt;
+this.currentSheet = sheet</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0;110.0;60.0;20.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>735</x>
+      <y>570</y>
+      <w>30</w>
+      <h>75</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+</diagram>
